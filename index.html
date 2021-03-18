@@ -43,8 +43,33 @@
 
 
 
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" onsubmit="return hangFrame()">
     </form>
+
+    <div class="form-answers">
+      <p>Since you are hanging <span id="numFramesAnswer">6</span> frames, we recommend you insert your nail:</p>
+
+      <div class="frame1">
+        <p>For Frame 1:</p>
+        <p>height: <span class="heightAnswer"></span></p>
+        <p>width: <span id="widthAnswer1"></span></p>
+        
+      </div>
+
+      <div class="frame2">
+        <p>For Frame 1:</p>
+        <p>height: <span class="heightAnswer"></span></p>
+        <p>width: <span id="widthAnswer2"></span></p>
+        
+      </div>
+
+      <div class="frame3">
+        <p>For Frame 1:</p>
+        <p>height: <span class="heightAnswer"></span></p>
+        <p>width: <span id="widthAnswer3"></span></p>
+        
+      </div>
+    </div>
 
 
     <script src="./script.js"></script>

@@ -6,7 +6,54 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Picture Frame Calculator</h1>
+    <p>Find the perfect height to hang your picture frame. Use decimals in measurements if measurement is inbetween whole numbers (ex: 12 1/4" would be 12.25).</p>
+
+
+  
+
+    <form>
+      <p>I'm measuring in:</p>
+      <input type="radio" id="inches" name="metric" value="in">
+      <label for="inches">In.</label><br>
+      <input type="radio" id="cenimeters" name="metric" value="cm">
+      <label for="cenimeters">Cm.</label><br>
+
+      <label for="numFrames">How many picture frames are you hanging?</label><br>
+      <select id="numFrames" name="numFrames">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      </select><br>
+
+      <label for="widthWall">What is the width of the wall you are hanging the frame(s):</label><br>
+      <input type="text" id="widthWall" name="widthWall" value="72" required><br>
+
+
+      
+      <p>Frame Specs</p>
+      <label for="height">Height:</label><br>
+      <input type="text" id="height" name="height" value="18" required><br>
+
+      <label for="width">Width:</label><br>
+      <input type="text" id="width" name="width" value="12" required><br>
+
+      <label for="numHooks">How Many Hooks Does The Frame Have?</label><br>
+      <select id="numHooks" name="numHooks">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      </select><br>
+
+      <label for="hookSide">If there are 2 hooks how far are they from the edge of the frame?</label><br>
+      <input type="text" id="hookSide" name="hookSide" value=".5"><br>
+
+      <label for="hookTop">How far down is the hook from the top of the frame?</label><br>
+      <input type="text" id="hookTop" name="hookTop" value="4" required><br><br>
+
+
+
+      <input type="submit" value="Submit">
+    </form>
 
 
     <script src="./script.js"></script>

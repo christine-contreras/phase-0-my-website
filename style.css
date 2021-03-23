@@ -1,3 +1,8 @@
-/* body {
-    background: blue;
-} */
+#form-answers, #frame1, #frame2, #frame3 {
+    display: none;
+}
+
+
+#form-answers.show, #frame1.show, #frame2.show, #frame3.show {
+    display: block;
+}

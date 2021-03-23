@@ -21,107 +21,181 @@ function hangFrame() {
     //frame specs pull in
     const numFrames = parseFloat(document.getElementById('numFrames').value);
 
-    // find out height to put in hook
-    //height of frame/2
-    const eyeHeight = 60; //60 inches
-    const middleHeight = frameHeight / 2;
-    //60 inches + half frame height - hook position
-    const hangNailHeight = (eyeHeight + middleHeight) - hookTop;
-
-    //find middle of wall
-    const wallWidth = parseFloat(document.getElementById('widthWall').value);
-    const wallMiddle = wallWidth / 2;
-
-    // check where on the wall's width to hang nails based on how many frames they are hanging
-    if (numFrames === 3) {
-        //middle frame = middle of wall
-        const middleFrame = wallMiddle;
-
-        //left frame: middle of wall - width of frame - 1 inch
-        const leftFrame = wallMiddle - frameWidth - 1;
-
-        //right frame: middle of wall + width of frame + 1 inch
-        const rightFrame = wallMiddle + frameWidth + 1;
-
-        //show all 3 frames in answers
-        numFramesAnswer.innerHTML = "3";
-        formAnswers.classList.add('show');
-        frame1.classList.add('show');
-        frame2.classList.add('show');
-        frame3.classList.add('show');
-        heightAnswer[0].innerHTML = hangNailHeight;
-        heightAnswer[1].innerHTML = hangNailHeight;
-        heightAnswer[2].innerHTML = hangNailHeight;
-        widthAnswer1.innerHTML = leftFrame;
-        widthAnswer2.innerHTML = middleFrame;
-        widthAnswer3.innerHTML = rightFrame;
-
-        // console.log('three frames working');
 
 
-    } else if (numFrames === 2) {
-        //left frame: middle of wall - 1/2 width of frame - 0.5 inches
-        const leftFrame = wallMiddle - (frameWidth / 2) - 0.5;
+    //check if user is using cm
+    if (document.getElementById('cenimeters').checked) {
+        //need to convert to cm
+        // find out height to put in hook
+        //height of frame/2
+        const eyeHeight = 60 * 2.54; //60 inches
+        const middleHeight = frameHeight / 2;
+        //60 inches + half frame height - hook position
+        const hangNailHeight = (eyeHeight + middleHeight) - hookTop;
+
+        //find middle of wall
+        const wallWidth = parseFloat(document.getElementById('widthWall').value);
+        const wallMiddle = wallWidth / 2;
+
+        // check where on the wall's width to hang nails based on how many frames they are hanging
+        if (numFrames === 3) {
+            //middle frame = middle of wall
+            const middleFrame = wallMiddle;
+
+            //left frame: middle of wall - width of frame - 1 inch
+            const leftFrame = wallMiddle - frameWidth - (1 * 2.54);
+
+            //right frame: middle of wall + width of frame + 1 inch
+            const rightFrame = wallMiddle + frameWidth + (1 * 2.54);
+
+            //show all 3 frames in answers
+            numFramesAnswer.innerHTML = "3";
+            formAnswers.classList.add('show');
+            frame1.classList.add('show');
+            frame2.classList.add('show');
+            frame3.classList.add('show');
+            heightAnswer[0].innerHTML = hangNailHeight;
+            heightAnswer[1].innerHTML = hangNailHeight;
+            heightAnswer[2].innerHTML = hangNailHeight;
+            widthAnswer1.innerHTML = leftFrame;
+            widthAnswer2.innerHTML = middleFrame;
+            widthAnswer3.innerHTML = rightFrame;
+
+            // console.log('three frames working');
 
 
-        //right frame: middle of wall + 1/2 width of frame + 0.5 inches
-        const rightFrame = wallMiddle + (frameWidth / 2) + 0.5;
-
-        //show 2 frames in answers
-        numFramesAnswer.innerHTML = "2";
-        formAnswers.classList.add('show');
-        frame1.classList.add('show');
-        frame2.classList.add('show');
-        frame3.classList.remove('show');
-        heightAnswer[0].innerHTML = hangNailHeight;
-        heightAnswer[1].innerHTML = hangNailHeight;
-        widthAnswer1.innerHTML = leftFrame;
-        widthAnswer2.innerHTML = rightFrame;
-
-        // console.log('two frames working');
-
-    } else {
-        // alert(numFrames);
-        //only hanging 1 frame
-        //middle of the wall measurement
-        const middleFrame = wallMiddle;
-
-        //show 1 frame in answers
-        numFramesAnswer.innerHTML = "1";
-        formAnswers.classList.add('show');
-        frame1.classList.add('show');
-        frame2.classList.remove('show');
-        frame3.classList.remove('show');
-        heightAnswer[0].innerHTML = hangNailHeight;
-        widthAnswer1.innerHTML = middleFrame;
-
-        // console.log('one frame working');
-    }
+        } else if (numFrames === 2) {
+            //left frame: middle of wall - 1/2 width of frame - 0.5 inches
+            const leftFrame = wallMiddle - (frameWidth / 2) - (0.5 * 2.54);
 
 
+            //right frame: middle of wall + 1/2 width of frame + 0.5 inches
+            const rightFrame = wallMiddle + (frameWidth / 2) + (0.5 * 2.54);
+
+            //show 2 frames in answers
+            numFramesAnswer.innerHTML = "2";
+            formAnswers.classList.add('show');
+            frame1.classList.add('show');
+            frame2.classList.add('show');
+            frame3.classList.remove('show');
+            heightAnswer[0].innerHTML = hangNailHeight;
+            heightAnswer[1].innerHTML = hangNailHeight;
+            widthAnswer1.innerHTML = leftFrame;
+            widthAnswer2.innerHTML = rightFrame;
+
+            // console.log('two frames working');
+
+        } else {
+            //only hanging 1 frame
+            //middle of the wall measurement
+            const middleFrame = wallMiddle;
+
+            //show 1 frame in answers
+            numFramesAnswer.innerHTML = "1";
+            formAnswers.classList.add('show');
+            frame1.classList.add('show');
+            frame2.classList.remove('show');
+            frame3.classList.remove('show');
+            heightAnswer[0].innerHTML = hangNailHeight;
+            widthAnswer1.innerHTML = middleFrame;
+
+            // console.log('one frame working');
+        }
+
+    } else {  //user is using inches
+        
+        // find out height to put in hook
+        //height of frame/2
+        const eyeHeight = 60; //60 inches
+        const middleHeight = frameHeight / 2;
+        //60 inches + half frame height - hook position
+        const hangNailHeight = (eyeHeight + middleHeight) - hookTop;
+
+        //find middle of wall
+        const wallWidth = parseFloat(document.getElementById('widthWall').value);
+        const wallMiddle = wallWidth / 2;
+
+        // check where on the wall's width to hang nails based on how many frames they are hanging
+        if (numFrames === 3) {
+            //middle frame = middle of wall
+            const middleFrame = wallMiddle;
+
+            //left frame: middle of wall - width of frame - 1 inch
+            const leftFrame = wallMiddle - frameWidth - 1;
+
+            //right frame: middle of wall + width of frame + 1 inch
+            const rightFrame = wallMiddle + frameWidth + 1;
+
+            //show all 3 frames in answers
+            numFramesAnswer.innerHTML = "3";
+            formAnswers.classList.add('show');
+            frame1.classList.add('show');
+            frame2.classList.add('show');
+            frame3.classList.add('show');
+            heightAnswer[0].innerHTML = hangNailHeight;
+            heightAnswer[1].innerHTML = hangNailHeight;
+            heightAnswer[2].innerHTML = hangNailHeight;
+            widthAnswer1.innerHTML = leftFrame;
+            widthAnswer2.innerHTML = middleFrame;
+            widthAnswer3.innerHTML = rightFrame;
+
+            // console.log('three frames working');
+
+
+        } else if (numFrames === 2) {
+            //left frame: middle of wall - 1/2 width of frame - 0.5 inches
+            const leftFrame = wallMiddle - (frameWidth / 2) - 0.5;
+
+
+            //right frame: middle of wall + 1/2 width of frame + 0.5 inches
+            const rightFrame = wallMiddle + (frameWidth / 2) + 0.5;
+
+            //show 2 frames in answers
+            numFramesAnswer.innerHTML = "2";
+            formAnswers.classList.add('show');
+            frame1.classList.add('show');
+            frame2.classList.add('show');
+            frame3.classList.remove('show');
+            heightAnswer[0].innerHTML = hangNailHeight;
+            heightAnswer[1].innerHTML = hangNailHeight;
+            widthAnswer1.innerHTML = leftFrame;
+            widthAnswer2.innerHTML = rightFrame;
+
+            // console.log('two frames working');
+
+        } else {
+            //only hanging 1 frame
+            //middle of the wall measurement
+            const middleFrame = wallMiddle;
+
+            //show 1 frame in answers
+            numFramesAnswer.innerHTML = "1";
+            formAnswers.classList.add('show');
+            frame1.classList.add('show');
+            frame2.classList.remove('show');
+            frame3.classList.remove('show');
+            heightAnswer[0].innerHTML = hangNailHeight;
+            widthAnswer1.innerHTML = middleFrame;
+
+            // console.log('one frame working');
+        }
+
+    } //if inch or cm statement
 
 } //end function
 
 
 
-//check if user is using in
-if (document.getElementById('inches').checked) {
-    //run function
-} else {
-    //need to convert to cm
 
-}
 
 
 document.getElementById('formSubmit').addEventListener('click', function () {
     hangFrame();
-    // console.log('click working');
-
 });
 
 
 const form = document.getElementById("form");
-function handleForm(event) { 
-    event.preventDefault(); 
-} 
+function handleForm(event) {
+    event.preventDefault();
+}
 form.addEventListener('submit', handleForm);

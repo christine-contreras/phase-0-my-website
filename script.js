@@ -21,17 +21,12 @@ function hangFrame() {
     //frame specs pull in
     const numFrames = parseFloat(document.getElementById('numFrames').value);
 
-    console.log(`number of frames: ${numFrames}`);
-
     // find out height to put in hook
     //height of frame/2
     const eyeHeight = 60; //60 inches
     const middleHeight = frameHeight / 2;
     //60 inches + half frame height - hook position
     const hangNailHeight = (eyeHeight + middleHeight) - hookTop;
-
-    console.log(`hang nail height: ${hangNailHeight}`);
-
 
     //find middle of wall
     const wallWidth = parseFloat(document.getElementById('widthWall').value);
@@ -61,7 +56,7 @@ function hangFrame() {
         widthAnswer2.innerHTML = middleFrame;
         widthAnswer3.innerHTML = rightFrame;
 
-        console.log('three frames working');
+        // console.log('three frames working');
 
 
     } else if (numFrames === 2) {
@@ -83,7 +78,7 @@ function hangFrame() {
         widthAnswer1.innerHTML = leftFrame;
         widthAnswer2.innerHTML = rightFrame;
 
-        console.log('two frames working');
+        // console.log('two frames working');
 
     } else {
         // alert(numFrames);
@@ -100,7 +95,7 @@ function hangFrame() {
         heightAnswer[0].innerHTML = hangNailHeight;
         widthAnswer1.innerHTML = middleFrame;
 
-        console.log('one frame working');
+        // console.log('one frame working');
     }
 
 
@@ -120,7 +115,7 @@ if (document.getElementById('inches').checked) {
 
 document.getElementById('formSubmit').addEventListener('click', function () {
     hangFrame();
-    console.log('click working');
+    // console.log('click working');
 
 });
 

@@ -6,3 +6,13 @@
 #form-answers.show, #frame1.show, #frame2.show, #frame3.show {
     display: block;
 }
+
+
+.inches, .cm{
+    display: none;
+}
+
+
+.inches.show, .cm.show{
+    display: inline-block;
+}

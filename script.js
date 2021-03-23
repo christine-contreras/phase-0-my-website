@@ -7,7 +7,9 @@ const formAnswers = document.getElementById('form-answers'),
     widthAnswer1 = document.getElementById('widthAnswer1'),
     widthAnswer2 = document.getElementById('widthAnswer2'),
     widthAnswer3 = document.getElementById('widthAnswer3'),
-    heightAnswer = document.getElementsByClassName('heightAnswer');
+    heightAnswer = document.getElementsByClassName('heightAnswer'),
+    cmText = document.querySelectorAll('.cm'),
+    inchesText = document.querySelectorAll('.inches');
 
 
 
@@ -36,6 +38,18 @@ function hangFrame() {
         //find middle of wall
         const wallWidth = parseFloat(document.getElementById('widthWall').value);
         const wallMiddle = wallWidth / 2;
+
+        //show cm and hide inches text
+        for (let i = 0; i < cmText.length; i++) {
+            cmText[i].classList.add('show');
+            console.log('cm loop working');
+        }
+
+        for (let i = 0; i < inchesText.length; i++) {
+            inchesText[i].classList.remove('show');
+            console.log('inch loop working');
+        }
+
 
         // check where on the wall's width to hang nails based on how many frames they are hanging
         if (numFrames === 3) {
@@ -115,6 +129,18 @@ function hangFrame() {
         const wallWidth = parseFloat(document.getElementById('widthWall').value);
         const wallMiddle = wallWidth / 2;
 
+        //show inches and hide cm text
+        for (let i = 0; i < cmText.length; i++) {
+            cmText[i].classList.remove('show');
+            console.log('cm loop working');
+        }
+
+        for (let i = 0; i < inchesText.length; i++) {
+            inchesText[i].classList.add('show');
+            console.log('inch loop working');
+        }
+
+
         // check where on the wall's width to hang nails based on how many frames they are hanging
         if (numFrames === 3) {
             //middle frame = middle of wall
@@ -184,16 +210,13 @@ function hangFrame() {
 
 } //end function
 
-
-
-
-
-
+//on click submit
 document.getElementById('formSubmit').addEventListener('click', function () {
     hangFrame();
 });
 
 
+//prevent form from submitting
 const form = document.getElementById("form");
 function handleForm(event) {
     event.preventDefault();

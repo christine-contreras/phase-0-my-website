@@ -1,12 +1,11 @@
+/* js css */
 #form-answers, #frame1, #frame2, #frame3 {
     display: none;
 }
 
-
 #form-answers.show, #frame1.show, #frame2.show, #frame3.show {
     display: block;
 }
-
 
 .inches, .cm{
     display: none;
@@ -15,4 +14,41 @@
 
 .inches.show, .cm.show{
     display: inline-block;
+}
+
+/* styling */
+.text-center{
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.column-1, .column-2{
+    padding: 1em;
+}
+
+.column-2{
+    flex-grow: 1;
+}
+
+.frame-row{
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-around; 
+}
+
+.frame {
+    flex-basis: 28%;
+    border: 5px solid;
+    margin: 1em;
+    height: 30vh;
+}
+
+@media (min-width:1200px) {
+    .frame {
+        height: 50vh;
+    }  
 }

@@ -1,54 +1,73 @@
 /* js css */
-#form-answers, #frame1, #frame2, #frame3 {
+
+#form-answers,
+#frame1,
+#frame2,
+#frame3 {
     display: none;
 }
 
-#form-answers.show, #frame1.show, #frame2.show, #frame3.show {
+#form-answers.show,
+#frame1.show,
+#frame2.show,
+#frame3.show {
     display: block;
 }
 
-.inches, .cm{
+.inches,
+.cm {
     display: none;
 }
 
-
-.inches.show, .cm.show{
+.inches.show,
+.cm.show {
     display: inline-block;
 }
 
+
 /* styling */
-.text-center{
+
+.text-center {
     text-align: center;
 }
 
-.row{
+.row {
     display: flex;
     flex-flow: row wrap;
 }
 
-.column-1, .column-2{
+.column-1,
+.column-2 {
     padding: 1em;
 }
 
-.column-2{
+.column-2 {
     flex-grow: 1;
 }
 
-.frame-row{
-   display: flex;
-   flex-flow: row nowrap;
-   justify-content: space-around; 
+.frame-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
 .frame {
+    background-color: #f6f6f6;
     flex-basis: 28%;
-    border: 5px solid;
     margin: 1em;
     height: 30vh;
+    border: solid 3vmin #161616;
+    border-bottom-color: #000;
+    border-left-color: #353535;
+    border-radius: 2px;
+    border-right-color: #353535;
+    border-top-color: #6a6a6a;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25) inset, 0 5px 10px 5px rgba(0, 0, 0, .25);
+    padding: 3vmin
 }
 
 @media (min-width:1200px) {
     .frame {
         height: 50vh;
-    }  
+    }
 }

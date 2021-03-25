@@ -1,6 +1,6 @@
 //answer divs pull in
 const formAnswers = document.getElementById('form-answers'),
-    numFramesAnswer = document.getElementById('numFramesAnswer'),
+    // numFramesAnswer = document.getElementById('numFramesAnswer'),
     frame1 = document.getElementById('frame1'),
     frame2 = document.getElementById('frame2'),
     frame3 = document.getElementById('frame3'),
@@ -22,6 +22,8 @@ function hangFrame() {
 
     //frame specs pull in
     const numFrames = parseFloat(document.getElementById('numFrames').value);
+
+
 
 
 
@@ -63,7 +65,7 @@ function hangFrame() {
             const rightFrame = wallMiddle + frameWidth + (1 * 2.54);
 
             //show all 3 frames in answers
-            numFramesAnswer.innerHTML = "3";
+            // numFramesAnswer.innerHTML = "3";
             formAnswers.classList.add('show');
             frame1.classList.add('show');
             frame2.classList.add('show');
@@ -87,7 +89,7 @@ function hangFrame() {
             const rightFrame = wallMiddle + (frameWidth / 2) + (0.5 * 2.54);
 
             //show 2 frames in answers
-            numFramesAnswer.innerHTML = "2";
+            // numFramesAnswer.innerHTML = "2";
             formAnswers.classList.add('show');
             frame1.classList.add('show');
             frame2.classList.add('show');
@@ -105,7 +107,7 @@ function hangFrame() {
             const middleFrame = wallMiddle;
 
             //show 1 frame in answers
-            numFramesAnswer.innerHTML = "1";
+            // numFramesAnswer.innerHTML = "1";
             formAnswers.classList.add('show');
             frame1.classList.add('show');
             frame2.classList.remove('show');
@@ -116,8 +118,8 @@ function hangFrame() {
             // console.log('one frame working');
         }
 
-    } else {  //user is using inches
-        
+    } else { //user is using inches
+
         // find out height to put in hook
         //height of frame/2
         const eyeHeight = 60; //60 inches
@@ -153,7 +155,7 @@ function hangFrame() {
             const rightFrame = wallMiddle + frameWidth + 1;
 
             //show all 3 frames in answers
-            numFramesAnswer.innerHTML = "3";
+            // numFramesAnswer.innerHTML = "3";
             formAnswers.classList.add('show');
             frame1.classList.add('show');
             frame2.classList.add('show');
@@ -177,7 +179,7 @@ function hangFrame() {
             const rightFrame = wallMiddle + (frameWidth / 2) + 0.5;
 
             //show 2 frames in answers
-            numFramesAnswer.innerHTML = "2";
+            // numFramesAnswer.innerHTML = "2";
             formAnswers.classList.add('show');
             frame1.classList.add('show');
             frame2.classList.add('show');
@@ -195,7 +197,7 @@ function hangFrame() {
             const middleFrame = wallMiddle;
 
             //show 1 frame in answers
-            numFramesAnswer.innerHTML = "1";
+            // numFramesAnswer.innerHTML = "1";
             formAnswers.classList.add('show');
             frame1.classList.add('show');
             frame2.classList.remove('show');
@@ -211,13 +213,14 @@ function hangFrame() {
 } //end function
 
 //on click submit
-document.getElementById('formSubmit').addEventListener('click', function () {
+document.getElementById('formSubmit').addEventListener('click', function() {
     hangFrame();
 });
 
 
 //prevent form from submitting
 const form = document.getElementById("form");
+
 function handleForm(event) {
     event.preventDefault();
 }

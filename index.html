@@ -3,13 +3,17 @@
 
 <head>
     <title>My Website</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
-    <h1 class="text-center">Picture Frame Calculator</h1>
-    <p class="text-center">Find the perfect height to hang your picture frame. Use decimals in measurements if measurement is inbetween whole numbers (ex: 12 1/4" would be 12.25).</p>
+    <div class="title-container">
+        <h1 class="text-center">Picture Frame Calculator</h1>
+        <p class="subhead text-center">Find the perfect height to hang your picture frame. Use decimals in measurements if measurement is inbetween whole numbers (ex: 12 1/4" would be 12.25).</p>
+    </div>
 
     <div class="row">
         <div class="column-1">
@@ -51,7 +55,6 @@
 
         <div class="column-2">
             <div id="form-answers">
-                <!-- <p class="text-center">Since you are hanging <span id="numFramesAnswer">6</span> frames, we recommend you insert your nail</p> -->
 
                 <p class="text-center">We recommend you hang your nail:</p>
 
@@ -71,16 +74,16 @@
                         <div id="image-2" class="image" style="background-image: url('https://images.unsplash.com/photo-1578958792897-58db5098a820?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80')"></div>
 
                         <div class="frame-naildimensions">
-                            <p>height: <span class="heightAnswer"></span><span class="inches">"</span> <span class="cm">cm</span></p>
-                            <p>width: <span id="widthAnswer2"></span><span class="inches">"</span> <span class="cm">cm</span></p>
+                            <p>Up: <span class="heightAnswer"></span><span class="inches">"</span> <span class="cm">cm</span></p>
+                            <p>Over: <span id="widthAnswer2"></span><span class="inches">"</span> <span class="cm">cm</span></p>
                         </div>
                     </div>
 
                     <div id="frame3" class="frame">
                         <div id="image-3" class="image" style="background-image: url('https://images.unsplash.com/photo-1578301978069-45264734cddc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=655&q=80')"></div>
                         <div class="frame-naildimensions">
-                            <p>height: <span class="heightAnswer"></span><span class="inches">"</span> <span class="cm">cm</span></p>
-                            <p>width: <span id="widthAnswer3"></span><span class="inches">"</span> <span class="cm">cm</span></p>
+                            <p>Up: <span class="heightAnswer"></span><span class="inches">"</span> <span class="cm">cm</span></p>
+                            <p>Over: <span id="widthAnswer3"></span><span class="inches">"</span> <span class="cm">cm</span></p>
                         </div>
 
                     </div>

@@ -27,6 +27,9 @@ function hangFrame() {
 
     let unitConverter;
 
+    //css issue with background
+    document.getElementsByTagName('html')[0].style.height = 'auto';
+
 
     //checking inches vs cm
     if (document.getElementById('cenimeters').checked) {

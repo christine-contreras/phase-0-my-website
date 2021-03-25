@@ -31,6 +31,12 @@
 /* styling */
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;500;600&display=swap');
+html {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: 'PT Serif', serif;
 }

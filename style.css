@@ -7,11 +7,14 @@
     display: none;
 }
 
-#form-answers.show,
+#form-answers.show {
+    display: block;
+}
+
 #frame1.show,
 #frame2.show,
 #frame3.show {
-    display: block;
+    display: flex;
 }
 
 .inches,
@@ -51,9 +54,22 @@ h6,
     text-align: center;
 }
 
+.relative {
+    position: relative;
+}
+
+.padding-top {
+    padding-top: 1em;
+}
+
+.img-responsive {
+    max-height: 100%;
+    max-width: 100%;
+}
+
 .row {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
 }
 
 .column-1,
@@ -61,9 +77,14 @@ h6,
     padding: 1em;
 }
 
-.column-2 {
-    flex-grow: 1;
+.column-1 {
+    align-self: center;
 }
+
+
+/* .column-2 {
+    flex-grow: 1;
+} */
 
 .frame-row {
     display: flex;
@@ -75,7 +96,7 @@ h6,
     background-color: #f6f6f6;
     flex-basis: 28%;
     margin: 1em;
-    height: 30vh;
+    height: 20vh;
     border: solid 3vmin #161616;
     border-bottom-color: #000;
     border-left-color: #353535;
@@ -85,6 +106,7 @@ h6,
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25) inset, 0 5px 10px 5px rgba(0, 0, 0, .25);
     padding: 3vmin;
     position: relative;
+    align-items: center;
 }
 
 @media (min-width:1200px) {
@@ -111,14 +133,45 @@ h6,
     position: absolute;
     top: 0;
     left: 50%;
+    z-index: 10;
 }
 
 .frame-naildimensions {
     position: absolute;
-    top: 10%;
+    top: 7%;
     left: 52%;
+    background: #ffffffb8;
+    z-index: 10;
+    border-radius: 3px;
 }
 
-.frame-naildimensions p {
+@media (max-width: 758px) {
+    .frame-naildimensions {
+        top: 30%;
+        left: 5%;
+    }
+}
+
+.column-2 p {
     margin: 5px;
+}
+
+#wall-length::before {
+    content: " ";
+    background: #000;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }

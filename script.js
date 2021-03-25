@@ -7,6 +7,7 @@ const formAnswers = document.getElementById('form-answers'),
     widthAnswer1 = document.getElementById('widthAnswer1'),
     widthAnswer2 = document.getElementById('widthAnswer2'),
     widthAnswer3 = document.getElementById('widthAnswer3'),
+    widthWallAnswer = document.getElementById('widthWallAnswer'),
     heightAnswer = document.getElementsByClassName('heightAnswer'),
     cmText = document.querySelectorAll('.cm'),
     inchesText = document.querySelectorAll('.inches');
@@ -14,6 +15,7 @@ const formAnswers = document.getElementById('form-answers'),
 
 
 function hangFrame() {
+
     const frameHeight = parseFloat(document.getElementById('height').value);
 
     const frameWidth = parseFloat(document.getElementById('width').value);
@@ -58,9 +60,11 @@ function hangFrame() {
     //60 inches + half frame height - hook position
     const hangNailHeight = (eyeHeight + middleHeight) - hookTop;
 
-    //find middle of wall
+    //find middle of wall and display
     const wallWidth = parseFloat(document.getElementById('widthWall').value);
     const wallMiddle = wallWidth / 2;
+    widthWallAnswer.innerHTML = wallWidth;
+
 
     // check where on the wall's width to hang nails based on how many frames they are hanging
     if (numFrames === 3) {

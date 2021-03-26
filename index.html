@@ -4,59 +4,76 @@
 <head>
     <title>My Website</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
-    <div class="title-container">
-        <h1 class="text-center">Picture Frame Calculator</h1>
-        <p class="subhead text-center">Find the perfect height to hang your picture frame. Use decimals in measurements if measurement is inbetween whole numbers (ex: 12 1/4" would be 12.25).</p>
-    </div>
-
     <div class="row">
         <div class="column-1">
+            <div class="title-container">
+                <h1 class="text-center">Picture Frame Calculator</h1>
+                <hr>
+                <p class="subhead text-center">Find the perfect height to hang your picture frame. Use decimals in measurements if measurement is inbetween whole numbers (ex: 12 1/4" would be 12.25).</p>
+            </div>
 
-            <form id="form" return="false">
+
+
+
+            <form id="form" class="form" return="false">
                 <p>I'm measuring in:</p>
-                <input type="radio" id="inches" name="metric" value="in">
-                <label for="inches">In.</label><br>
-                <input type="radio" id="cenimeters" name="metric" value="cm">
-                <label for="cenimeters">Cm.</label><br>
+                <div class="block">
+                    <input type="radio" id="inches" name="metric" value="in">
+                    <label for="inches">In.</label>
+                </div>
+                <div class="block">
+                    <input type="radio" id="cenimeters" name="metric" value="cm">
+                    <label for="cenimeters">Cm.</label>
+                </div>
 
-                <label for="numFrames">How many picture frames are you hanging?</label><br>
-                <select id="numFrames" name="numFrames">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select><br>
+                <div class="padding-top">
+                    <label for="numFrames">How many picture frames are you hanging?</label>
+                    <select id="numFrames" name="numFrames">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                </div>
 
-                <label for="widthWall">What is the width of the wall you are hanging the frame(s):</label><br>
-                <input type="text" id="widthWall" name="widthWall" value="72" required><br>
-
-
-
-                <p>Frame Specs</p>
-                <label for="height">Height:</label><br>
-                <input type="text" id="height" name="height" value="18" required><br>
-
-                <label for="width">Width:</label><br>
-                <input type="text" id="width" name="width" value="12" required><br>
-
-                <label for="hookTop">How far down is the hook from the top of the frame?</label><br>
-                <input type="text" id="hookTop" name="hookTop" value="4" required><br><br>
+                <div class="block padding-top padding-bottom">
+                    <label for="widthWall">What is the width of the wall you are hanging the frame(s):</label>
+                    <input type="text" id="widthWall" name="widthWall" placeholder="72" required>
+                </div>
 
 
 
-                <input id="formSubmit" type="submit" value="Submit">
+                <p class="title">Frame Specs</p>
+                <div class="block">
+                    <label for="height">Height:</label>
+                    <input type="text" id="height" name="height" placeholder="18" required>
+                </div>
+
+                <div class="block padding-top">
+                    <label for="width">Width:</label>
+                    <input type="text" id="width" name="width" placeholder="12" required>
+                </div>
+
+                <div class="padding-top padding-bottom">
+                    <label for="hookTop">How far down is the hook from the top of the frame?</label>
+                    <input type="text" id="hookTop" name="hookTop" placeholder="4" required>
+                </div>
+
+
+
+                <input id="formSubmit" type="submit" value="Submit" class="btn block">
             </form>
         </div>
 
         <div class="column-2">
             <div id="form-answers">
 
-                <p class="text-center">We recommend you hang your nail:</p>
+                <p class="text-center title">We recommend you hang your nail:</p>
 
                 <div class="frame-row">
                     <div id="frame1" class="frame">
@@ -90,7 +107,7 @@
 
 
                 </div>
-                <!-- end row -->
+                <!-- end frame row -->
 
                 <div id="wall-length" class="relative padding-top">
                     <p class="text-center">
@@ -100,7 +117,9 @@
 
             </div>
         </div>
+        <!-- end column 2 -->
     </div>
+    <!-- end row -->
 
 
 

@@ -150,8 +150,6 @@ function hangFrame() {
 } //end function
 
 function imgShow() {
-    console.log('imgshow function firing');
-
     const img1Input = document.getElementById('imginput-1').value;
     const img2Input = document.getElementById('imginput-2').value;
 

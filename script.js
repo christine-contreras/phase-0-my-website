@@ -64,7 +64,8 @@ function hangFrame() {
     const hangNailHeight = (eyeHeight + middleHeight) - hookTop;
 
     //find middle of wall and display
-    const wallWidth = parseFloat(document.getElementById('widthWall').value);
+    let wallWidth = parseFloat(document.getElementById('widthWall').value);
+    wallWidth = wallWidth * unitConverter;
     const wallMiddle = wallWidth / 2;
     widthWallAnswer.innerHTML = wallWidth;
 

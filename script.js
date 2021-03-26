@@ -11,6 +11,9 @@ const formAnswers = document.getElementById('form-answers'),
     img1Container = document.getElementById('img-url-container-1'),
     img2Container = document.getElementById('img-url-container-2'),
     img3Container = document.getElementById('img-url-container-3'),
+    img1 = document.getElementById('image-1'),
+    img2 = document.getElementById('image-2'),
+    img3 = document.getElementById('image-3'),
     cmText = document.querySelectorAll('.cm'),
     inchesText = document.querySelectorAll('.inches');
 
@@ -146,10 +149,33 @@ function hangFrame() {
 
 } //end function
 
-
 function imgShow() {
+    console.log('imgshow function firing');
+
+    const img1Input = document.getElementById('imginput-1').value;
+    const img2Input = document.getElementById('imginput-2').value;
+
+    const img3Input = document.getElementById('imginput-3').value;
+
+    console.log(`this is image 1: ${img1Input}`);
+
+    img1.style.backgroundImage = `url('${img1Input}')`;
+    img2.style.backgroundImage = `url('${img2Input}')`;
+    img3.style.backgroundImage = `url('${img3Input}')`;
+
 
 }
+
+//prevent forms from submitting
+const form = document.getElementById("form");
+const form2 = document.getElementById("form-imgs");
+
+function handleForm(event) {
+    event.preventDefault();
+}
+form.addEventListener('submit', handleForm);
+form2.addEventListener('submit', handleForm);
+
 
 //on click submit
 document.getElementById('formSubmit').addEventListener('click', function() {
@@ -157,16 +183,7 @@ document.getElementById('formSubmit').addEventListener('click', function() {
 });
 
 
-//prevent form from submitting
-const form = document.getElementById("form");
-
-function handleForm(event) {
-    event.preventDefault();
-}
-form.addEventListener('submit', handleForm);
-
-
 //on click img urls submit
-document.getElementById('formSubmit').addEventListener('click', function() {
-    hangFrame();
+document.getElementById('formSubmitImgs').addEventListener('click', function() {
+    imgShow();
 });

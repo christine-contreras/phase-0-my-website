@@ -3,11 +3,17 @@
 #form-answers,
 #frame1,
 #frame2,
-#frame3 {
+#frame3,
+#img-url-container-1,
+#img-url-container-2,
+#img-url-container-3 {
     display: none;
 }
 
-#form-answers.show {
+#form-answers.show,
+#img-url-container-1.show,
+#img-url-container-2.show,
+#img-url-container-3.show {
     display: block;
 }
 
@@ -105,6 +111,10 @@ input::placeholder {
     max-width: 100%;
 }
 
+.m-auto {
+    margin: auto;
+}
+
 .row {
     display: flex;
     flex-flow: column wrap;
@@ -141,12 +151,6 @@ input::placeholder {
     align-items: center;
 }
 
-@media (min-width: 992px) {
-    .title-container {
-        width: 30%;
-    }
-}
-
 h1 {
     font-size: 2.5em;
 }
@@ -168,7 +172,7 @@ hr {
 
 .form {
     flex-grow: 2;
-    padding: 0 6em;
+    padding: 1em 2em;
 }
 
 .title {
@@ -213,12 +217,6 @@ hr {
     align-items: center;
 }
 
-@media (min-width:1200px) {
-    .frame {
-        height: 50vh;
-    }
-}
-
 .frame::after {
     content: " ";
     background: #000;
@@ -249,13 +247,6 @@ hr {
     border-radius: 3px;
 }
 
-@media (max-width: 768px) {
-    .frame-naildimensions {
-        top: 30%;
-        left: 5%;
-    }
-}
-
 #wall-length::before {
     content: " ";
     background: #000;
@@ -274,4 +265,30 @@ hr {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .frame-naildimensions {
+        top: 30%;
+        left: 5%;
+    }
+}
+
+@media (min-width: 992px) {
+    .title-container {
+        width: 30%;
+    }
+    .form-container {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media (min-width:1200px) {
+    .frame {
+        height: 50vh;
+    }
+    .form {
+        padding: 0 3em;
+    }
 }

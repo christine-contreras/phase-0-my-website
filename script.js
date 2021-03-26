@@ -1,6 +1,5 @@
 //answer divs pull in
 const formAnswers = document.getElementById('form-answers'),
-    // numFramesAnswer = document.getElementById('numFramesAnswer'),
     frame1 = document.getElementById('frame1'),
     frame2 = document.getElementById('frame2'),
     frame3 = document.getElementById('frame3'),
@@ -9,6 +8,9 @@ const formAnswers = document.getElementById('form-answers'),
     widthAnswer3 = document.getElementById('widthAnswer3'),
     widthWallAnswer = document.getElementById('widthWallAnswer'),
     heightAnswer = document.getElementsByClassName('heightAnswer'),
+    img1Container = document.getElementById('img-url-container-1'),
+    img2Container = document.getElementById('img-url-container-2'),
+    img3Container = document.getElementById('img-url-container-3'),
     cmText = document.querySelectorAll('.cm'),
     inchesText = document.querySelectorAll('.inches');
 
@@ -82,11 +84,14 @@ function hangFrame() {
         const rightFrame = wallMiddle + frameWidth + (1 * unitConverter);
 
         //show all 3 frames in answers
-        // numFramesAnswer.innerHTML = "3";
+
         formAnswers.classList.add('show');
         frame1.classList.add('show');
         frame2.classList.add('show');
         frame3.classList.add('show');
+        img1Container.classList.add('show');
+        img2Container.classList.add('show');
+        img3Container.classList.add('show');
         heightAnswer[0].innerHTML = hangNailHeight;
         heightAnswer[1].innerHTML = hangNailHeight;
         heightAnswer[2].innerHTML = hangNailHeight;
@@ -106,11 +111,13 @@ function hangFrame() {
         const rightFrame = wallMiddle + (frameWidth / 2) + (0.5 * unitConverter);
 
         //show 2 frames in answers
-        // numFramesAnswer.innerHTML = "2";
         formAnswers.classList.add('show');
         frame1.classList.add('show');
         frame2.classList.add('show');
         frame3.classList.remove('show');
+        img1Container.classList.add('show');
+        img2Container.classList.add('show');
+        img3Container.classList.remove('show');
         heightAnswer[0].innerHTML = hangNailHeight;
         heightAnswer[1].innerHTML = hangNailHeight;
         widthAnswer1.innerHTML = leftFrame;
@@ -124,11 +131,13 @@ function hangFrame() {
         const middleFrame = wallMiddle;
 
         //show 1 frame in answers
-        // numFramesAnswer.innerHTML = "1";
         formAnswers.classList.add('show');
         frame1.classList.add('show');
         frame2.classList.remove('show');
         frame3.classList.remove('show');
+        img1Container.classList.add('show');
+        img2Container.classList.remove('show');
+        img3Container.classList.remove('show');
         heightAnswer[0].innerHTML = hangNailHeight;
         widthAnswer1.innerHTML = middleFrame;
 
@@ -136,6 +145,11 @@ function hangFrame() {
     }
 
 } //end function
+
+
+function imgShow() {
+
+}
 
 //on click submit
 document.getElementById('formSubmit').addEventListener('click', function() {
@@ -150,3 +164,9 @@ function handleForm(event) {
     event.preventDefault();
 }
 form.addEventListener('submit', handleForm);
+
+
+//on click img urls submit
+document.getElementById('formSubmit').addEventListener('click', function() {
+    hangFrame();
+});

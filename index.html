@@ -22,51 +22,53 @@
 
 
             <form id="form" class="form" return="false">
-                <p>I'm measuring in:</p>
-                <div class="block">
-                    <input type="radio" id="inches" name="metric" value="in">
-                    <label for="inches">In.</label>
-                </div>
-                <div class="block">
-                    <input type="radio" id="cenimeters" name="metric" value="cm">
-                    <label for="cenimeters">Cm.</label>
-                </div>
+                <div class="form-container">
+                    <p>I'm measuring in:</p>
+                    <div class="block">
+                        <input type="radio" id="inches" name="metric" value="in">
+                        <label for="inches">In.</label>
+                    </div>
+                    <div class="block">
+                        <input type="radio" id="cenimeters" name="metric" value="cm">
+                        <label for="cenimeters">Cm.</label>
+                    </div>
 
-                <div class="padding-top">
-                    <label for="numFrames">How many picture frames are you hanging?</label>
-                    <select id="numFrames" name="numFrames">
+                    <div class="padding-top">
+                        <label for="numFrames">How many picture frames are you hanging?</label>
+                        <select id="numFrames" name="numFrames">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                 </select>
+                    </div>
+
+                    <div class="block padding-top padding-bottom">
+                        <label for="widthWall">What is the width of the wall you are hanging the frame(s):</label>
+                        <input type="text" id="widthWall" name="widthWall" placeholder="72" required>
+                    </div>
+
+
+
+                    <p class="title">Frame Specs</p>
+                    <div class="block">
+                        <label for="height">Height:</label>
+                        <input type="text" id="height" name="height" placeholder="18" required>
+                    </div>
+
+                    <div class="block padding-top">
+                        <label for="width">Width:</label>
+                        <input type="text" id="width" name="width" placeholder="12" required>
+                    </div>
+
+                    <div class="padding-top padding-bottom">
+                        <label for="hookTop">How far down is the hook from the top of the frame?</label>
+                        <input type="text" id="hookTop" name="hookTop" placeholder="4" required>
+                    </div>
+
+
+
+                    <input id="formSubmit" type="submit" value="Submit" class="btn block">
                 </div>
-
-                <div class="block padding-top padding-bottom">
-                    <label for="widthWall">What is the width of the wall you are hanging the frame(s):</label>
-                    <input type="text" id="widthWall" name="widthWall" placeholder="72" required>
-                </div>
-
-
-
-                <p class="title">Frame Specs</p>
-                <div class="block">
-                    <label for="height">Height:</label>
-                    <input type="text" id="height" name="height" placeholder="18" required>
-                </div>
-
-                <div class="block padding-top">
-                    <label for="width">Width:</label>
-                    <input type="text" id="width" name="width" placeholder="12" required>
-                </div>
-
-                <div class="padding-top padding-bottom">
-                    <label for="hookTop">How far down is the hook from the top of the frame?</label>
-                    <input type="text" id="hookTop" name="hookTop" placeholder="4" required>
-                </div>
-
-
-
-                <input id="formSubmit" type="submit" value="Submit" class="btn block">
             </form>
         </div>
 
@@ -114,6 +116,27 @@
                         <span id="widthWallAnswer"></span><span class="inches">"</span> <span class="cm">cm</span>
                     </p>
                 </div>
+
+                <form id="form-imgs padding-top" class="form" return="false">
+                    <div class="form-container text-center">
+                        <div class="block padding-bottom img-url-container" id="img-url-container-1">
+                            <label for="imginput-1">Image URL #1:</label>
+                            <input type="text" id="imginput-1" name="imginput-1">
+                        </div>
+
+                        <div class="block padding-bottom img-url-container" id="img-url-container-2">
+                            <label for="imginput-2">Image URL #2:</label>
+                            <input type="text" id="imginput-2" name="imginput-2">
+                        </div>
+
+                        <div class="block padding-bottom img-url-container" id="img-url-container-3">
+                            <label for="imginput-3">Image URL #3:</label>
+                            <input type="text" id="imginput-3" name="imginput-3">
+                        </div>
+
+                        <input id="formSubmitImgs" type="submit" value="Load Images" class="btn block m-auto">
+                    </div>
+                </form>
 
             </div>
         </div>
